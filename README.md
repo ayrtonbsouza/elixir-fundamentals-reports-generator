@@ -1,21 +1,10 @@
+![readme-headers_Prancheta 1](https://user-images.githubusercontent.com/30063455/110525094-f4a7a300-80f2-11eb-8c6d-903120ec168b.png)
 # ReportsGenerator
 
-**TODO: Add description**
+This is an application developed as a lesson for Elixir Ignite Bootcamp, proposed by RocketSeat.
 
-## Installation
+## About the challenge
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `reports_generator` to your list of dependencies in `mix.exs`:
+In this lesson, I learned how to create a function that reads files from system.
 
-```elixir
-def deps do
-  [
-    {:reports_generator, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/reports_generator](https://hexdocs.pm/reports_generator).
-
+If you want to test this implementation from the terminal, run `iex -S mix` inside the project's root directory 🚀
