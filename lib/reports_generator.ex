@@ -20,12 +20,19 @@ defmodule ReportsGenerator do
     |> Enum.reduce(report_accumulator(), fn line, report -> sum_values(line, report) end)
   end
 
+  def build_from_many(filenames) when not is_list(filenames) do
+    {:error, "Please, provide a string list"}
+  end
+
   def build_from_many(filenames) do
-    filenames
-    |> Task.async_stream(&build/1)
-    |> Enum.reduce(report_accumulator(), fn {:ok, result}, report ->
-      sum_reports(report, result)
-    end)
+    result =
+      filenames
+      |> Task.async_stream(&build/1)
+      |> Enum.reduce(report_accumulator(), fn {:ok, result}, report ->
+        sum_reports(report, result)
+      end)
+
+    {:ok, result}
   end
 
   def fetch_higher_cost(report, option) when option in @options do
